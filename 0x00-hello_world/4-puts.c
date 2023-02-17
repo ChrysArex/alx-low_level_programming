@@ -2,11 +2,12 @@
 /**
 * main - entry point
 * description: display a string
-* Return: no value
+* Return: zero as success
 */
 int main(void)
 {
 	char mystr[] = "Programming is like building a multilingual puzzle\n";
 
-	puts(mystr);
+    puts(mystr);
+    return (0);
 }
