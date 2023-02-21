@@ -22,11 +22,13 @@ int main(void)
 					putchar(j);
 					putchar(k);
 					if (i != 55)
-					putchar(44);
-					putchar(32);
+					{
+						putchar(44);
+						putchar(32);
 					}
 				}
 			}
+		}
 	}
 	putchar(10);
 	return (0);
