@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-* while - inside the while loop there is no changes of the value of i
+* main - causes an infinite loop
 * Return: 0
 */
 
