@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-* main - inside the while loop there is no changes of the value of i
+* while - inside the while loop there is no changes of the value of i
 * Return: 0
 */
 
