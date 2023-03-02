@@ -4,19 +4,42 @@
  * @n: size of the array
  * @a: the array we want the reverse
  *
- * Return: pointer on the copie of src string
+ * Return: nothing
  */
 void reverse_array(int *a, int n)
 {
 	int *pa = a;
 	int *pa2 = a;
-	int c;
+	int c, inter;
 
-	for (c = 0; c < n; c++)
+	for (c = 1; c < n; c++)
 		pa++;
-	for (; pa >= a; pa--)
+	if (n % 2 != 0)
 	{
-		*pa2 = *pa;
-		pa2++;
+		for (c = 1; c <= n / 2 + 1; c++)
+		{
+			if (*pa != *pa2)
+			{
+				inter = *pa2;
+				*pa2 = *pa;
+				*pa = inter;
+				pa2++;
+				pa--;
+			}
+		}
+	}
+	else if (n % 2 == 0)
+	{
+		for (c = 1; c <= n / 2; c++)
+		{
+			if (*pa != *pa2)
+			{
+				inter = *pa2;
+				*pa2 = *pa;
+				*pa = inter;
+				pa2++;
+				pa--;
+			}
+		}
 	}
 }
