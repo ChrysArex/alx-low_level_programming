@@ -9,18 +9,22 @@
 void rev_string(char *s)
 {
 
-	char *k;
+	char *k = s;
 	int l;
 	int n;
+	char tmp;
 
 	for (n = 0; *s != '\0'; s++)
 	{
 		n++;
 	}
-	for (l = n-1; l >= 0; s--)
+	s--;
+	for (l = 0; l < n / 2; l++)
 	{
-		*k++ = *s;
-		l--;
+		tmp = *k;
+		*k = *s;
+		*s = tmp;
+		k++;
+		s--;
 	}
-	s = k;
 }
