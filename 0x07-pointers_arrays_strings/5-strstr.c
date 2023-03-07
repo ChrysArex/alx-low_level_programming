@@ -10,20 +10,16 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack != '\0')
+	while (*haystack)
 	{
-		char *duplicate = haystack;
-
-		while (*haystack == *needle && *haystack != '\0' && *needle != '\0')
+		if ((*haystack == *needle && coincidence(haystack, needle) == 1) || !*needle)
 		{
-			needle++;
+			return (haystack);
+		}
+		else
+		{
 			haystack++;
 		}
-		if (!*needle != '\0')
-		{
-			return (duplicate);
-		}
-		haystack++;
 	}
 	return (0);
 }
