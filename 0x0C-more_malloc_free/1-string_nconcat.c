@@ -38,7 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n2 = strl(ps2);
 	else
 		n2 = n;
-	ps = (char *) malloc(sizeof(char) * (n1 + n2));
+	ps = (char *) malloc(sizeof(char) * (n1 + n2 + 1));
 	if (ps == NULL)
 		return (NULL);
 	for (i = 0; i < n1; i++)
