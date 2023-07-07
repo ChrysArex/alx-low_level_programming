@@ -1,26 +1,34 @@
+#include <stdio.h>
 #include "main.h"
-/**
- * print_binary - prints the binary representation of a number.
- * @n: the number 
- *
- * Return: the converted number
- */
 
+/**
+ * print_binary - print the binary representation of a number
+ * @n: the number to convert
+ * Return: nothing
+ */
 void print_binary(unsigned long int n)
 {
-	int rest, quotient, check = 0, div = n;
+	unsigned long int prev_div, check = 0, div = n;
 
-	while (check <= n)
+	if (n == 0)
+		_putchar('0');
+	else
 	{
-		for (; div != check; )
+		while (1)
 		{
-			div >> 1;
-			quotient = div;
-			rest = div - (2 * quotient);
+			for (; div != check; )
+			{
+				prev_div = div;
+				div = div >> 1;
+				/*printf("div = %li\n", div);*/
+			}
+			check = prev_div;
+			_putchar('0' + (prev_div - (2 * div)));
+			if (check == n)
+				break;
+			div = n;
+			/*printf("check = %li\n", check);*/
 		}
-		check = div;
-		_putchar('0' + rest);
-		quotient = n
 	}
 }
 
