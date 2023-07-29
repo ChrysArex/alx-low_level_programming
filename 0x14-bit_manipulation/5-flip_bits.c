@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -10,8 +11,10 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int i, count = 0;
+	unsigned int i, count = 0, a = 64;
 
+	if (n == ULONG_MAX && m == 0)
+		return (a);
 	for (i = 0; i < 32; i++)
 	{
 		if (((1 << i) & n) != ((1 << i) & m))
