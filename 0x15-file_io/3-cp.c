@@ -33,8 +33,8 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s", argv[1]);
 		exit(98);
 	}
-	while ((n = read(fd1, buff, 1024)) > 0)
-		write(fd2, buff, 1024);
+	while ((n = read(fd1, buff, 1024)) != 0)
+		write(fd2, buff, n);
 	close(fd1);
 	close(fd2);
 	return (0);
